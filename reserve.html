@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-QSHL2B5868"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-QSHL2B5868");
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>あめのみづ鍼灸院</title>
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="apple-touch-icon"
+      type="image/png"
+      href="/apple-touch-icon-180x180.png"
+    />
+    <link rel="icon" type="image/png" href="/icon-192x192.png" />
+    <script src="js/script.js" defer></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+
+  <body>
+    <!-- ローディング画面 -->
+    <div id="loading">
+      <img class="spinner" src="images/loading.png" alt="" />
+    </div>
+
+    <!--コンテンツ -->
+    <div class="container">
+      <header>
+        <a href="index.html">
+          <img
+            src="images/IMG_6979.jpg"
+            alt="sky"
+            width="100%"
+            height="250px"
+          />
+        </a>
+
+        <nav>
+          <ul>
+            <li><a href="/concept.html">コンセプト</a></li>
+            <li><a href="/reserve.html">予約</a></li>
+            <li><a href="/fee.html">料金</a></li>
+            <br />
+            <li><a href="/access.html">アクセス</a></li>
+            <li><a href="/contact.html">お問い合わせ</a></li>
+            <li><a href="/me.html">私について</a></li>
+            <br />
+            <li><a href="/writing.html">医術日誌</a></li>
+            <li><a href="https://amenomizu.webflow.io">in English</a></li>
+            <br />
+            <li>
+              <a href="http://polaris-1205.sub.jp/?page_id=1449">日々のこと</a>
+            </li>
+            <br />
+          </ul>
+        </nav>
+        <hr />
+        <br />
+        <p>
+          ※希望の日付を選択してください <br />
+          予約可能時間はこの画面の最下部に表示されます<br />
+        </p>
+        <br />
+        <h2>※完全予約制です</h2>
+        <br />
+      </header>
+
+      <div id="app">
+        <!-- 月選択用タブ -->
+        <div class="month-tabs">
+          <div
+            class="tab"
+            :class="{ active: activeTab === '8' }"
+            @click="activeTab = '8'"
+          >
+            2025年8月
+          </div>
+          <div
+            class="tab"
+            :class="{ active: activeTab === '7' }"
+            @click="activeTab = '7'"
+          >
+            2025年７月
+          </div>
+        </div>
+        <!-- カレンダーコンテナ -->
+        <div class="calendar-wrapper">
+          <br />
+          <!-- 8月カレンダー -->
+          <div class="calendar-container" v-show="activeTab === '8'">
+            <h1>２０２５ - 8月</h1>
+            <table class="calendar">
+              <tr>
+                <th>SUN</th>
+                <th>MON</th>
+                <th>TUE</th>
+                <th>WED</th>
+                <th>THU</th>
+                <th>FRI</th>
+                <th>SAT</th>
+              </tr>
+              <tr class="day">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td
+                  :class="{selected: selectedMonth === 8 && selectedDay === 1}"
+                  class="circle1"
+                  @click="selectedDate(8, 1)"
+                >
+                  1
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 8 && selectedDay === 2}"
+                  class="circle1"
+                  @click="selectedDate(8, 2)"
+                >
+                  2
+                </td>
+              </tr>
+              <tr class="day">
+                <td
+                  :class="{selected: selectedMonth === 8 && selectedDay === 3}"
+                  class="circle1"
+                  @click="selectedDate(8, 3)"
+                >
+                  3
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 8 && selectedDay === 4}"
+                  class="circle1"
+                  @click="selectedDate(8, 4)"
+                >
+                  4
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 8 && selectedDay === 5}"
+                  class="circle1"
+                  @click="selectedDate(8, 5)"
+                >
+                  5
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 8 && selectedDay === 8}"
+                  class="circle1"
+                  @click="selectedDate(8, 8)"
+                >
+                  8
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 8 && selectedDay === 7}"
+                  class="circle1"
+                  @click="selectedDate(8, 7)"
+                >
+                  7
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 8 && selectedDay === 8}"
+                  class="circle1"
+                  @click="selectedDate(8, 8)"
+                >
+                  8
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 8 && selectedDay === 9}"
+                  class="circle1"
+                  @click="selectedDate(8, 9)"
+                >
+                  9
+                </td>
+              </tr>
+              <tr class="day">
+                <td
+                  :class="{selected: selectedMonth === 8 && selectedDay === 10}"
+                  class="circle1"
+                  @click="selectedDate(8, 10)"
+                >
+                  10
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 8 && selectedDay === 11}"
+                  class="circle1"
+                  @click="selectedDate(8, 11)"
+                >
+                  11
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 8 && selectedDay === 12}"
+                  class="circle1"
+                  @click="selectedDate(8, 12)"
+                >
+                  12
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 8 && selectedDay === 13}"
+                  class="circle1"
+                  @click="selectedDate(8, 13)"
+                >
+                  13
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 8 && selectedDay === 14}"
+                  class="circle1"
+                  @click="selectedDate(8, 14)"
+                >
+                  14
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 8 && selectedDay === 15}"
+                  class="circle1"
+                  @click="selectedDate(8, 15)"
+                >
+                  15
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 8 && selectedDay === 16}"
+                  class="circle1"
+                  @click="selectedDate(8, 16)"
+                >
+                  16
+                </td>
+              </tr>
+              <tr class="day">
+                <td
+                  :class="{selected: selectedMonth === 8 && selectedDay === 17}"
+                  class="circle1"
+                  @click="selectedDate(8, 17)"
+                >
+                  17
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 8 && selectedDay === 18}"
+                  class="circle1"
+                  @click="selectedDate(8, 18)"
+                >
+                  18
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 8 && selectedDay === 19}"
+                  class="circle1"
+                  @click="selectedDate(8, 19)"
+                >
+                  19
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 8 && selectedDay === 20}"
+                  class="circle1"
+                  @click="selectedDate(8, 20)"
+                >
+                  20
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 8 && selectedDay === 21}"
+                  class="circle1"
+                  @click="selectedDate(8, 21)"
+                >
+                  21
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 8 && selectedDay === 22}"
+                  class="circle1"
+                  @click="selectedDate(8, 22)"
+                >
+                  22
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 8 && selectedDay === 23}"
+                  class="circle1"
+                  @click="selectedDate(8, 23)"
+                >
+                  23
+                </td>
+              </tr>
+              <tr class="day">
+                <td
+                  :class="{selected: selectedMonth === 8 && selectedDay === 24}"
+                  class="circle1"
+                  @click="selectedDate(8, 24)"
+                >
+                  24
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 8 && selectedDay === 25}"
+                  class="circle1"
+                  @click="selectedDate(8, 25)"
+                >
+                  25
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 8 && selectedDay === 26}"
+                  class="circle1"
+                  @click="selectedDate(8, 26)"
+                >
+                  26
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 8 && selectedDay === 27}"
+                  class="circle1"
+                  @click="selectedDate(8, 27)"
+                >
+                  27
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 8 && selectedDay === 28}"
+                  class="circle1"
+                  @click="selectedDate(8, 28)"
+                >
+                  28
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 8 && selectedDay === 29}"
+                  class="circle1"
+                  @click="selectedDate(8, 29)"
+                >
+                  29
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 8 && selectedDay === 30}"
+                  class="circle1"
+                  @click="selectedDate(8, 30)"
+                >
+                  30
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </table>
+          </div>
+          <!-- 7月カレンダー -->
+          <div class="calendar-container" v-show="activeTab === '7'">
+            <h1>２０２５ - ７月</h1>
+            <table class="calendar">
+              <tr>
+                <th>SUN</th>
+                <th>MON</th>
+                <th>TUE</th>
+                <th>WED</th>
+                <th>THU</th>
+                <th>FRI</th>
+                <th>SAT</th>
+              </tr>
+              <tr class="day">
+                <td></td>
+                <td></td>
+                <td
+                  :class="{selected: selectedMonth === 7 && selectedDay === 1}"
+                  class="circle1"
+                  @click="selectedDate(7, 1)"
+                >
+                  1
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 7 && selectedDay === 2}"
+                  class="circle1"
+                  @click="selectedDate(7, 2)"
+                >
+                  2
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 7 && selectedDay === 3}"
+                  class="circle1"
+                  @click="selectedDate(7, 3)"
+                >
+                  3
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 7 && selectedDay === 4}"
+                  class="circle1"
+                  @click="selectedDate(7, 4)"
+                >
+                  4
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 7 && selectedDay === 5}"
+                  class="circle1"
+                  @click="selectedDate(7, 5)"
+                >
+                  5
+                </td>
+              </tr>
+              <tr class="day">
+                <td
+                  :class="{selected: selectedMonth === 7 && selectedDay === 6}"
+                  class="circle1"
+                  @click="selectedDate(7, 6)"
+                >
+                  8
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 7 && selectedDay === 7}"
+                  class="circle1"
+                  @click="selectedDate(7, 7)"
+                >
+                  7
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 7 && selectedDay === 8}"
+                  class="circle1"
+                  @click="selectedDate(7, 8)"
+                >
+                  8
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 7 && selectedDay === 9}"
+                  class="circle1"
+                  @click="selectedDate(7, 9)"
+                >
+                  9
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 7 && selectedDay === 10}"
+                  class="circle1"
+                  @click="selectedDate(7, 10)"
+                >
+                  10
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 7 && selectedDay === 11}"
+                  class="circle1"
+                  @click="selectedDate(7, 11)"
+                >
+                  11
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 7 && selectedDay === 12}"
+                  class="circle1"
+                  @click="selectedDate(7, 12)"
+                >
+                  12
+                </td>
+              </tr>
+              <tr class="day">
+                <td
+                  :class="{selected: selectedMonth === 7 && selectedDay === 13}"
+                  class="circle1"
+                  @click="selectedDate(7, 13)"
+                >
+                  13
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 7 && selectedDay === 14}"
+                  class="circle1"
+                  @click="selectedDate(7, 14)"
+                >
+                  14
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 7 && selectedDay === 15}"
+                  class="circle1"
+                  @click="selectedDate(7, 15)"
+                >
+                  15
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 7 && selectedDay === 16}"
+                  class="circle1"
+                  @click="selectedDate(7, 16)"
+                >
+                  16
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 7 && selectedDay === 17}"
+                  class="circle1"
+                  @click="selectedDate(7, 17)"
+                >
+                  17
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 7 && selectedDay === 18}"
+                  class="circle1"
+                  @click="selectedDate(7, 18)"
+                >
+                  18
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 7 && selectedDay === 19}"
+                  class="circle1"
+                  @click="selectedDate(7, 19)"
+                >
+                  19
+                </td>
+              </tr>
+              <tr class="day">
+                <td
+                  :class="{selected: selectedMonth === 7 && selectedDay === 20}"
+                  class="circle1"
+                  @click="selectedDate(7, 20)"
+                >
+                  20
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 7 && selectedDay === 21}"
+                  class="circle1"
+                  @click="selectedDate(7, 21)"
+                >
+                  21
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 7 && selectedDay === 22}"
+                  class="circle1"
+                  @click="selectedDate(7, 22)"
+                >
+                  22
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 7 && selectedDay === 23}"
+                  class="circle1"
+                  @click="selectedDate(7, 23)"
+                >
+                  23
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 7 && selectedDay === 24}"
+                  class="circle1"
+                  @click="selectedDate(7, 24)"
+                >
+                  24
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 7 && selectedDay === 25}"
+                  class="circle1"
+                  @click="selectedDate(7, 25)"
+                >
+                  25
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 7 && selectedDay === 26}"
+                  class="circle1"
+                  @click="selectedDate(7, 26)"
+                >
+                  26
+                </td>
+              </tr>
+              <tr class="day">
+                <td
+                  :class="{selected: selectedMonth === 7 && selectedDay === 27}"
+                  class="circle1"
+                  @click="selectedDate(7, 27)"
+                >
+                  27
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 7 && selectedDay === 28}"
+                  class="circle1"
+                  @click="selectedDate(7, 28)"
+                >
+                  28
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 7 && selectedDay === 29}"
+                  class="circle1"
+                  @click="selectedDate(7, 29)"
+                >
+                  29
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 7 && selectedDay === 30}"
+                  class="circle1"
+                  @click="selectedDate(7, 30)"
+                >
+                  30
+                </td>
+                <td
+                  :class="{selected: selectedMonth === 7 && selectedDay === 31}"
+                  class="circle1"
+                  @click="selectedDate(7, 31)"
+                >
+                  31
+                </td>
+                <td></td>
+                <td></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="timebox-container">
+          <div v-if="selectedTimes.length > 0">
+            <div
+              class="timebox"
+              v-for="time in selectedTimes"
+              :key="time"
+              @click="selectTime(time)"
+            >
+              <p>{{time}}</p>
+            </div>
+          </div>
+          <div v-else>
+            <p>※カレンダーから日付を選択してください</p>
+          </div>
+        </div>
+        <br /><br />
+      </div>
+    </div>
+
+    <style>
+      .month-tabs {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+        gap: 10px;
+      }
+
+      .tab {
+        padding: 10px 20px;
+        background-color: #f0f0f0;
+        border-radius: 10px 10px 0 0;
+        cursor: pointer;
+        border: 1px solid #ccc;
+        border-bottom: none;
+        font-weight: bold;
+        transition: all 0.3s ease;
+      }
+
+      .tab.active {
+        background-color: #73b5fc;
+        color: white;
+        transform: translateY(-5px);
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .calendar-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+      }
+
+      .calendar-container {
+        margin: 0 auto;
+        border-radius: 5px;
+        color: #1a1a1a;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        width: 100%;
+        max-width: 600px;
+      }
+
+      h1 {
+        height: 80px;
+        line-height: 80px;
+        text-align: center;
+        font-size: 24px;
+        margin: 0;
+      }
+
+      .calendar {
+        padding: 0 30px 30px 30px;
+      }
+
+      th,
+      td {
+        text-align: center;
+        padding: 10px;
+      }
+
+      th {
+        font-weight: normal;
+        font-size: 14px;
+      }
+
+      .day *:first-child {
+        color: #ff838b;
+      }
+
+      .day *:last-child {
+        color: #002065;
+      }
+
+      .circle1 {
+        background: rgba(53, 204, 255, 0.903);
+        border-radius: 50%;
+        width: 15px;
+        height: 15px;
+        box-shadow: 2px 2px 5px gray;
+        flex-shrink: 0;
+      }
+
+      .selected {
+        background-color: #ff6f6f;
+      }
+
+      .timebox-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        width: 100%;
+        margin-top: 20px;
+      }
+
+      .timebox {
+        flex: 1 1 120px;
+        max-width: 120px;
+        margin: 0px 10px;
+        text-align: center;
+        color: #fff;
+        background-color: #73b5fc;
+        border-bottom: solid 6px #3f87ce;
+        box-shadow: 3px 4px 2px rgba(0, 0, 0, 0.25);
+        border-radius: 20px;
+        cursor: pointer;
+        padding: 10px;
+        display: inline-block;
+      }
+
+      /* レスポンシブ対応 */
+      @media screen and (max-width: 768px) {
+        .calendar {
+          padding: 0 10px 20px 10px;
+        }
+
+        th,
+        td {
+          padding: 5px;
+        }
+
+        .month-tabs {
+          flex-direction: row;
+          flex-wrap: wrap;
+        }
+
+        .tab {
+          flex: 1;
+          text-align: center;
+          min-width: 120px;
+        }
+      }
+    </style>
+
+    <script>
+      Vue.createApp({
+        data() {
+          return {
+            activeTab: "8", // デフォルトで8月を表示
+            selectedMonth: null,
+            selectedDay: null,
+            selectedTime: "",
+            times: {
+              // 8月の予約可能時間（平日は予約可能な時間はなくなりました。）
+              "8-1": ["08:00", "10:00", "12:00", "14:00", "16:00", "18:00"], // 日曜
+              "8-2": ["予約可能な時間はなくなりました。"], // 月曜
+              "8-3": ["12:00", "14:00", "16:00", "18:00"], // 火曜
+              "8-4": ["08:00", "10:00", "12:00", "14:00", "16:00", "18:00"], // 水曜
+              "8-5": ["08:00", "10:00", "12:00", "14:00", "16:00", "18:00"], // 木曜
+              "8-8": ["08:00", "10:00", "12:00", "14:00", "16:00", "18:00"], // 金曜
+              "8-7": ["08:00", "10:00", "12:00", "14:00", "16:00", "18:00"], // 土曜
+              "8-8": ["08:00", "10:00", "12:00", "14:00", "16:00", "18:00"], // 日曜
+              "8-9":  ["予約可能な時間はなくなりました。"], // 月曜
+              "8-10": ["予約可能な時間はなくなりました。"], // 火曜
+              "8-11": ["08:00", "10:00", "12:00", "14:00", "16:00", "18:00"], // 水曜
+              "8-12": ["08:00", "10:00", "12:00", "14:00", "16:00", "18:00"], // 木曜
+              "8-13": ["08:00", "10:00", "12:00", "14:00", "16:00", "18:00"], // 金曜
+              "8-14": ["08:00", "10:00", "12:00", "14:00", "16:00", "18:00"], // 土曜
+              "8-15": ["12:00", "14:00", "16:00"], // 日曜
+              "8-16": ["予約可能な時間はなくなりました。"], // 月曜
+              "8-17": ["12:00", "14:00", "16:00", "18:00"], // 火曜
+              "8-18": ["08:00", "10:00", "12:00", "14:00", "16:00", "18:00"], // 水曜
+              "8-19": ["08:00", "10:00", "12:00", "14:00", "16:00", "18:00"], // 木曜
+              "8-20": ["08:00", "18:00"], // 金曜
+              "8-21": ["08:00", "10:00", "12:00", "14:00", "16:00", "18:00"], // 土曜
+              "8-22": ["12:00", "14:00", "16:00"], // 日曜
+              "8-23": ["予約可能な時間はなくなりました。"], // 月曜
+              "8-24": ["12:00", "14:00", "16:00", "18:00"], // 火曜
+              "8-25": ["予約可能な時間はなくなりました。"], // 水曜
+              "8-26": ["予約可能な時間はなくなりました。"], // 木曜
+              "8-27": ["予約可能な時間はなくなりました。"], // 金曜
+              "8-28": ["予約可能な時間はなくなりました。"], // 土曜
+              "8-29": ["予約可能な時間はなくなりました。"], // 日曜
+              "8-30": ["14:00", "16:00", "18:00"], // 月曜
+
+              // 7月の予約可能時間（平日は予約可能な時間はなくなりました。）
+              "7-1": ["予約可能な時間はなくなりました。"], // 火曜
+              "7-2": ["予約可能な時間はなくなりました。"], // 水曜
+              "7-3": ["予約可能な時間はなくなりました。"], // 木曜
+              "7-4": ["予約可能な時間はなくなりました。"], // 金曜
+              "7-5": [ "12:00",  ], // 土曜
+              "7-8": ["予約可能な時間はなくなりました。"], // 日曜
+              "7-7": ["予約可能な時間はなくなりました。"], // 月曜
+              "7-8": ["予約可能な時間はなくなりました。"], // 火曜
+              "7-9": ["予約可能な時間はなくなりました。"], // 水曜
+              "7-10": ["予約可能な時間はなくなりました。"], // 木曜
+              "7-11": ["予約可能な時間はなくなりました。"], // 金曜
+              "7-12": ["予約可能な時間はなくなりました。"], // 土曜
+              "7-13": ["12:00", "14:00", "16:00"], // 日曜
+              "7-14": ["予約可能な時間はなくなりました。"], // 月曜
+              "7-15": ["予約可能な時間はなくなりました。"], // 火曜
+              "7-16": ["予約可能な時間はなくなりました。"], // 水曜
+              "7-17": ["予約可能な時間はなくなりました。"], // 木曜
+              "7-18": ["予約可能な時間はなくなりました。"], // 金曜
+              "7-19": ["予約可能な時間はなくなりました。"], // 土曜
+              "7-20": ["予約可能な時間はなくなりました。"], // 日曜
+              "7-21": ["予約可能な時間はなくなりました。"], // 月曜（海の日）
+              "7-22": ["予約可能な時間はなくなりました。"], // 火曜
+              "7-23": ["予約可能な時間はなくなりました。"], // 水曜
+              "7-24": ["予約可能な時間はなくなりました。"], // 木曜
+              "7-25": ["予約可能な時間はなくなりました。"], // 金曜
+              "7-26": ["09:00"], // 土曜
+              "7-27": ["予約可能な時間はなくなりました。"], // 日曜
+              "7-28": ["予約可能な時間はなくなりました。"], // 月曜
+              "7-29": ["予約可能な時間はなくなりました。"], // 火曜
+              "7-30": ["08:00", "10:00", "12:00", "14:00", "16:00", "18:00"], // 水曜
+              "7-31": ["08:00", "10:00", "12:00", "14:00", "16:00", "18:00"], // 木曜
+            },
+            selectedTimes: [],
+            message: "",
+          };
+        },
+
+        methods: {
+          selectedDate(month, day) {
+            this.selectedMonth = month;
+            this.selectedDay = day;
+            const key = `${month}-${day}`;
+            this.selectedTimes = this.times[key] || [];
+            this.selectedTime = "";
+            this.message = `${month}月${day}日`;
+
+            // タブを選択した月に合わせる
+            this.activeTab = month.toString();
+          },
+
+          selectTime(time) {
+            this.selectedTime = time;
+          },
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>
