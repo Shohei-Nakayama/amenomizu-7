@@ -14,215 +14,295 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>あめのみづ鍼灸院</title>
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-    <link rel="stylesheet" href="css/style.css">
     <link rel="apple-touch-icon" type="image/png" href="/apple-touch-icon-180x180.png">
     <link rel="icon" type="image/png" href="/icon-192x192.png">
     <script src="js/script.js" defer></script>
 </head>
 <body>
     <!-- ローディング画面 -->
- <div id="loading">
+    <div id="loading" style="display: none;">
         <img class="spinner" src="images/loading.png" alt="">
-        </div>
+    </div>
 
-        <!--コンテンツ -->
- <div class="container">
-    <header>
-        <a href="index.html">
-            <img src="images/IMG_8015.jpg" alt="" width="100%" height="250px">
-        </a>
-        
-                
-                <nav>
-                    <ul>
-                        <li><a href="/concept.html">コンセプト</a></li>
-                        <li><a href="/reserve.html">予約</a></li>
-                        <li><a href="/fee.html">料金</a></li><br>
-                        <li><a href="/access.html">アクセス</a></li>
-                        <li><a href="/contact.html">お問い合わせ</a></li>
-                        <li><a href="/me.html">私について</a></li><br>
-                        <li><a href="/writing.html">医術日誌</a></li>
-                        <li><a href="https://amenomizu.webflow.io">in English</a></li>
-                    </ul>
-                </nav><br>
-            </header>
-            <hr>
-    
-    <div class="contact-form">
+    <!--コンテンツ -->
+    <div class="container">
+        <header>
+            <a href="index.html">
+                <img src="images/IMG_8015.jpg" alt="" style="width: 100%; height: 250px; object-fit: cover;">
+            </a>
+            
+            <nav>
+                <ul>
+                    <li><a href="/concept.html">コンセプト</a></li>
+                    <li><a href="/reserve.html">予約</a></li>
+                    <li><a href="/fee.html">料金</a></li><br>
+                    <li><a href="/access.html">アクセス</a></li>
+                    <li><a href="/contact.html">お問い合わせ</a></li>
+                    <li><a href="/me.html">私について</a></li><br>
+                    <li><a href="/writing.html">医術日誌</a></li>
+                    <li><a href="https://amenomizu.webflow.io">in English</a></li>
+                </ul>
+            </nav><br>
+        </header>
+        <hr>
+
+        <div class="contact-form">
             <p class="caption">お問い合わせ</p>
-    
-     <form action="https://api.staticforms.xyz/submit" method="post">
-        <input 
-            type="hidden" 
-            name="accessKey" 
-            value="bf0d0e6d-45eb-4522-9145-eadfd121fe9a"
-            <!-- explain -->
-       
-    
-        <div class="item">
-                <label class="label">お名前</label>
-                <input type="text" class="inputs" name="name" />
+
+            <form action="https://api.staticforms.xyz/submit" method="post">
+                <input 
+                    type="hidden" 
+                    name="accessKey" 
+                    value="bf0d0e6d-45eb-4522-9145-eadfd121fe9a">
+
+                <div class="item">
+                    <label class="label">お名前</label>
+                    <input type="text" class="inputs" name="name" />
+                </div>
+
+                <div class="item">
+                    <label class="label">メールアドレス</label>
+                    <input type="email" class="inputs" name="email" required />
+                </div>
+
+                <div class="item">
+                    <label class="label">題名</label>
+                    <input type="text" class="inputs" name="subject">
+                </div>
+                
+                <div class="item">
+                    <label class="label">ご質問</label>
+                    <textarea name="message" class="inputs" placeholder="用件をご入力ください"></textarea>
+                </div>
+                <br>
+                <div class="button-area">
+                    <input type="submit" value="送信" />
+                    <input type="reset" value="リセット" />
+                </div>
+            </form>
+
+            <br><br><br><br>
+            <p>LINEからもご連絡可能です<br>
+                <a href="https://lin.ee/2hFqgR4"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="36" border="0"></a>
+                
+                <br><br><br>
+                どなたさまも歓迎ですので、お気軽にご連絡ください。
+            </p>
+
+            <br><br>
         </div>
-    
-        <div class="item">
-            <label class="label">メールアドレス</label>
-            <input type="email" class="inputs" name="email" required />
-        </div>
-    
-        <div class="item">
-            <label class="label">題名</label>
-            <input type="text" class="inputs" name="subject"> <!-- Optional -->
-        </div>
-        
-        
-        <div class="item">
-            <label class="label">ご質問</label>
-            <textarea name="message" class="inputs" placeholder="用件をご入力ください"  id=""></textarea>
-        </div>
-    <br>
-        <div class="button-area">
-            <input type="submit" value="送信" />
-            <input type="reset" value="リセット" />
-        </div>
-    </form>
-    
-    <br><br><br><br>
-    <p>LINEからもご連絡可能です<br>
-        <a href="https://lin.ee/2hFqgR4"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="36" border="0"></a>
-        
-           <br><br><br>
-        どなたさまも歓迎ですので、お気軽にご連絡ください。
-    </p>
+    </div>
 
-    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "M PLUS Rounded 1c", sans-serif;
+        }
 
-    <br><br>
-</div>
-<style>
+        body {
+            background-color: #f9f9f9;
+            line-height: 1.6;
+        }
 
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "M PLUS Rounded 1c", sans-serif;
-}
+        header {
+            margin-bottom: 30px;
+        }
 
-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+        nav ul {
+            list-style: none;
+            text-align: center;
+            padding: 20px 0;
+        }
 
-.title{
+        nav ul li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #499bf8;
+        }
+
+        .title {
             font-size: 70px;
-            background: linear-gradient(transparent 70% , #87cefa 30%);
-            border-radius:90%;
-            color:lightsteelblue;
+            background: linear-gradient(transparent 70%, #87cefa 30%);
+            border-radius: 90%;
+            color: lightsteelblue;
             animation: fadeInBox 2s linear;
         }
         
-        @keyframes fadeInBox
-        {0%
-            {
+        @keyframes fadeInBox {
+            0% {
                 opacity: 0;
             }
-         100%
-            {
+            100% {
                 opacity: 1;
             }
         }
 
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-.contact-form{
-    padding: 2vh 3vh;
-}
+        .caption {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 30px;
+            font-weight: bold;
+            color: #333;
+        }
 
-a{
-    text-decoration: none;
-}
+        form {
+            width: 100%;
+        }
 
-.caption{
-    text-align: center;
-    font-size: 4vh;
-    margin-bottom: 2vh;
-    font-weight: bold;
-}
+        .item {
+            margin-bottom: 25px;
+            display: flex;
+            flex-direction: column;
+        }
 
-form{
-    width: 90vh;
-    margin: 0 auto;
-}
+        .label {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+            padding-left: 10px;
+            border-left: 4px solid #499bf8;
+            font-size: 16px;
+        }
 
-.item{
- overflow: hidden;
- margin-bottom:2vh;
-}
+        .inputs {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
 
-.label{
-    float:left;
-    margin-right: 3vh;
-    width: 20vh;
-    border-left:2vh solid #499bf8;
-    padding-left: 3vh;
-}
+        .inputs:focus {
+            outline: none;
+            border-color: #499bf8;
+            box-shadow: 0 0 5px rgba(73, 155, 248, 0.3);
+        }
 
-.inputs{
-    float: left;
-    width: 35vh;
-}
+        textarea.inputs {
+            height: 120px;
+            resize: vertical;
+            font-family: inherit;
+        }
 
-input[type="text"],
-input[type="email"]{
-    border: solid 1px #aaa;
-    padding: 1vh;
-    font-size: 2vh;
-    border-radius: 5px;
-}
+        .button-area {
+            text-align: center;
+            margin-top: 30px;
+        }
 
-textarea{
-    border: 1px solid #aaa;
-    border-radius: 5px;
-    padding: 1vh;
-    height: 20vh;
-    width: 50vh;
-    font-size: 2.5vh;
-}
+        input[type="submit"],
+        input[type="reset"] {
+            background-color: #499bf8;
+            border: none;
+            padding: 12px 30px;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 6px;
+            margin: 0 10px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.1s;
+        }
 
-.button-area{
-    text-align: center;
-}
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            background-color: #357abd;
+            transform: translateY(-1px);
+        }
 
-input[type="submit"]{
-    background-color: #538efa;
-    border: none;
-    padding:1vh 2vh;
-    color:white;
-    font: size 17px;
-    font-weight:bold;
-    border-radius: 5px;
-    margin: 0 1vh;
-    box-shadow: 1px 1px 3px black;
-    cursor:pointer;
-}
+        input[type="reset"] {
+            background-color: #6c757d;
+        }
 
-input[type="reset"]{
-    background-color: #519cf2;
-    border: none;
-    padding:1vh 1vh;
-    color:white;
-    font: size 2vh;
-    font-weight:bold;
-    border-radius: 5px;
-    margin: 0 1vh;
-    box-shadow: 1px 1px 3px black;
-    cursor:pointer;
-}
+        input[type="reset"]:hover {
+            background-color: #545b62;
+        }
 
-p{
-    text-align: center;
-}
-</style>
+        p {
+            text-align: center;
+            color: #666;
+            font-size: 16px;
+        }
 
+        hr {
+            border: none;
+            height: 1px;
+            background-color: #ddd;
+            margin: 20px 0;
+        }
+
+        /* レスポンシブデザイン */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .contact-form {
+                padding: 20px;
+                margin: 0 10px;
+            }
+            
+            .caption {
+                font-size: 24px;
+            }
+            
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+            
+            .button-area {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            input[type="submit"],
+            input[type="reset"] {
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-form {
+                padding: 15px;
+            }
+            
+            .caption {
+                font-size: 20px;
+            }
+            
+            .inputs {
+                font-size: 14px;
+            }
+        }
+    </style>
 </body>
 </html>
