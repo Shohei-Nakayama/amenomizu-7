@@ -27,7 +27,7 @@
     />
     <link rel="icon" type="image/png" href="/icon-192x192.png" />
     <script src="js/script.js" defer></script>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
   </head>
 
   <body>
@@ -65,6 +65,20 @@
         </nav>
         <hr />
         <br />
+        
+        <!-- 予約一時停止のお知らせ -->
+        <div style="text-align: center; padding: 40px 20px; font-size: 18px; line-height: 1.8; color: #333;">
+          <p>
+            10月はしばらくの間、一時的に<br>
+            一部の例外の方を除き<br>
+            予約受け入れを中止しております。<br>
+            ただし、特別な事情や強いご要望のあるかたは<br>
+            この限りではありません<br>
+            その場合は、お問合せフォームからご連絡ください<br>
+          </p>
+        </div>
+
+        <!-- 
         <p>
           ※希望の日付を選択してください <br />
           予約可能時間はこの画面の最下部に表示されます<br />
@@ -76,12 +90,13 @@
           施術スペースにはいないことが多いため<br />
           予約の際は、お気をつけください。<br />
         </p>
+        -->
           
         <br />
       </header>
 
+      <!-- カレンダー部分をコメントアウト
       <div id="app">
-        <!-- 月選択用タブ -->
         <div class="month-tabs">
           <div
             class="tab"
@@ -98,10 +113,9 @@
             2025年10月
           </div>
         </div>
-        <!-- カレンダーコンテナ -->
+        
         <div class="calendar-wrapper">
           <br />
-          <!-- 9月カレンダー -->
           <div class="calendar-container" v-show="activeTab === '9'">
             <h1>２０２５ - 9月</h1>
             <table class="calendar">
@@ -159,432 +173,12 @@
                   6
                 </td>
               </tr>
-              <tr class="day">
-                <td
-                  :class="{selected: selectedMonth === 9 && selectedDay === 7}"
-                  class="circle1"
-                  @click="selectedDate(9, 7)"
-                >
-                  7
-                </td>
-                <td
-                  :class="{selected: selectedMonth === 9 && selectedDay === 8}"
-                  class="circle1"
-                  @click="selectedDate(9, 8)"
-                >
-                  8
-                </td>
-                <td
-                  :class="{selected: selectedMonth === 9 && selectedDay === 9}"
-                  class="circle1"
-                  @click="selectedDate(9, 9)"
-                >
-                  9
-                </td>
-                <td
-                  :class="{selected: selectedMonth === 9 && selectedDay === 10}"
-                  class="circle1"
-                  @click="selectedDate(9, 10)"
-                >
-                  10
-                </td>
-                <td
-                  :class="{selected: selectedMonth === 9 && selectedDay === 11}"
-                  class="circle1"
-                  @click="selectedDate(9, 11)"
-                >
-                  11
-                </td>
-                <td
-                  :class="{selected: selectedMonth === 9 && selectedDay === 12}"
-                  class="circle1"
-                  @click="selectedDate(9, 12)"
-                >
-                  12
-                </td>
-                <td
-                  :class="{selected: selectedMonth === 9 && selectedDay === 13}"
-                  class="circle1"
-                  @click="selectedDate(9, 13)"
-                >
-                  13
-                </td>
-              </tr>
-              <tr class="day">
-                <td
-                  :class="{selected: selectedMonth === 9 && selectedDay === 14}"
-                  class="circle1"
-                  @click="selectedDate(9, 14)"
-                >
-                  14
-                </td>
-                <td
-                  :class="{selected: selectedMonth === 9 && selectedDay === 15}"
-                  class="circle1"
-                  @click="selectedDate(9, 15)"
-                >
-                  15
-                </td>
-                <td
-                  :class="{selected: selectedMonth === 9 && selectedDay === 16}"
-                  class="circle1"
-                  @click="selectedDate(9, 16)"
-                >
-                  16
-                </td>
-                <td
-                  :class="{selected: selectedMonth === 9 && selectedDay === 17}"
-                  class="circle1"
-                  @click="selectedDate(9, 17)"
-                >
-                  17
-                </td>
-                <td
-                  :class="{selected: selectedMonth === 9 && selectedDay === 18}"
-                  class="circle1"
-                  @click="selectedDate(9, 18)"
-                >
-                  18
-                </td>
-                <td
-                  :class="{selected: selectedMonth === 9 && selectedDay === 19}"
-                  class="circle1"
-                  @click="selectedDate(9, 19)"
-                >
-                  19
-                </td>
-                <td
-                  :class="{selected: selectedMonth === 9 && selectedDay === 20}"
-                  class="circle1"
-                  @click="selectedDate(9, 20)"
-                >
-                  20
-                </td>
-              </tr>
-              <tr class="day">
-                <td
-                  :class="{selected: selectedMonth === 9 && selectedDay === 21}"
-                  class="circle1"
-                  @click="selectedDate(9, 21)"
-                >
-                  21
-                </td>
-                <td
-                  :class="{selected: selectedMonth === 9 && selectedDay === 22}"
-                  class="circle1"
-                  @click="selectedDate(9, 22)"
-                >
-                  22
-                </td>
-                <td
-                  :class="{selected: selectedMonth === 9 && selectedDay === 23}"
-                  class="circle1"
-                  @click="selectedDate(9, 23)"
-                >
-                  23
-                </td>
-                <td
-                  :class="{selected: selectedMonth === 9 && selectedDay === 24}"
-                  class="circle1"
-                  @click="selectedDate(9, 24)"
-                >
-                  24
-                </td>
-                <td
-                  :class="{selected: selectedMonth === 9 && selectedDay === 25}"
-                  class="circle1"
-                  @click="selectedDate(9, 25)"
-                >
-                  25
-                </td>
-                <td
-                  :class="{selected: selectedMonth === 9 && selectedDay === 26}"
-                  class="circle1"
-                  @click="selectedDate(9, 26)"
-                >
-                  26
-                </td>
-                <td
-                  :class="{selected: selectedMonth === 9 && selectedDay === 27}"
-                  class="circle1"
-                  @click="selectedDate(9, 27)"
-                >
-                  27
-                </td>
-              </tr>
-              <tr class="day">
-                <td
-                  :class="{selected: selectedMonth === 9 && selectedDay === 28}"
-                  class="circle1"
-                  @click="selectedDate(9, 28)"
-                >
-                  28
-                </td>
-                <td
-                  :class="{selected: selectedMonth === 9 && selectedDay === 29}"
-                  class="circle1"
-                  @click="selectedDate(9, 29)"
-                >
-                  29
-                </td>
-                <td
-                  :class="{selected: selectedMonth === 9 && selectedDay === 30}"
-                  class="circle1"
-                  @click="selectedDate(9, 30)"
-                >
-                  30
-                </td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
             </table>
           </div>
-          <!-- 10月カレンダー -->
+
           <div class="calendar-container" v-show="activeTab === '10'">
             <h1>２０２５ - 10月</h1>
             <table class="calendar">
-              <tr>
-                <th>SUN</th>
-                <th>MON</th>
-                <th>TUE</th>
-                <th>WED</th>
-                <th>THU</th>
-                <th>FRI</th>
-                <th>SAT</th>
-              </tr>
-              <tr class="day">
-                <td></td>
-                <td></td>
-                <td></td>
-                <td
-                  :class="{selected: selectedMonth === 10 && selectedDay === 1}"
-                  class="circle1"
-                  @click="selectedDate(10, 1)"
-                >
-                  1
-                </td>
-                <td
-                  :class="{selected: selectedMonth === 10 && selectedDay === 2}"
-                  class="circle1"
-                  @click="selectedDate(10, 2)"
-                >
-                  2
-                </td>
-                <td
-                  :class="{selected: selectedMonth === 10 && selectedDay === 3}"
-                  class="circle1"
-                  @click="selectedDate(10, 3)"
-                >
-                  3
-                </td>
-                <td
-                  :class="{selected: selectedMonth === 10 && selectedDay === 4}"
-                  class="circle1"
-                  @click="selectedDate(10, 4)"
-                >
-                  4
-                </td>
-              </tr>
-              <tr class="day">
-                <td
-                  :class="{selected: selectedMonth === 10 && selectedDay === 5}"
-                  class="circle1"
-                  @click="selectedDate(10, 5)"
-                >
-                  5
-                </td>
-                <td
-                  :class="{selected: selectedMonth === 10 && selectedDay === 6}"
-                  class="circle1"
-                  @click="selectedDate(10, 6)"
-                >
-                  6
-                </td>
-                <td
-                  :class="{selected: selectedMonth === 10 && selectedDay === 7}"
-                  class="circle1"
-                  @click="selectedDate(10, 7)"
-                >
-                  7
-                </td>
-                <td
-                  :class="{selected: selectedMonth === 10 && selectedDay === 8}"
-                  class="circle1"
-                  @click="selectedDate(10, 8)"
-                >
-                  8
-                </td>
-                <td
-                  :class="{selected: selectedMonth === 10 && selectedDay === 9}"
-                  class="circle1"
-                  @click="selectedDate(10, 9)"
-                >
-                  9
-                </td>
-                <td
-                  :class="{selected: selectedMonth === 10 && selectedDay === 10}"
-                  class="circle1"
-                  @click="selectedDate(10, 10)"
-                >
-                  10
-                </td>
-                <td
-                  :class="{selected: selectedMonth === 10 && selectedDay === 11}"
-                  class="circle1"
-                  @click="selectedDate(10, 11)"
-                >
-                  11
-                </td>
-              </tr>
-              <tr class="day">
-                <td
-                  :class="{selected: selectedMonth === 10 && selectedDay === 12}"
-                  class="circle1"
-                  @click="selectedDate(10, 12)"
-                >
-                  12
-                </td>
-                <td
-                  :class="{selected: selectedMonth === 10 && selectedDay === 13}"
-                  class="circle1"
-                  @click="selectedDate(10, 13)"
-                >
-                  13
-                </td>
-                <td
-                  :class="{selected: selectedMonth === 10 && selectedDay === 14}"
-                  class="circle1"
-                  @click="selectedDate(10, 14)"
-                >
-                  14
-                </td>
-                <td
-                  :class="{selected: selectedMonth === 10 && selectedDay === 15}"
-                  class="circle1"
-                  @click="selectedDate(10, 15)"
-                >
-                  15
-                </td>
-                <td
-                  :class="{selected: selectedMonth === 10 && selectedDay === 16}"
-                  class="circle1"
-                  @click="selectedDate(10, 16)"
-                >
-                  16
-                </td>
-                <td
-                  :class="{selected: selectedMonth === 10 && selectedDay === 17}"
-                  class="circle1"
-                  @click="selectedDate(10, 17)"
-                >
-                  17
-                </td>
-                <td
-                  :class="{selected: selectedMonth === 10 && selectedDay === 18}"
-                  class="circle1"
-                  @click="selectedDate(10, 18)"
-                >
-                  18
-                </td>
-              </tr>
-              <tr class="day">
-                <td
-                  :class="{selected: selectedMonth === 10 && selectedDay === 19}"
-                  class="circle1"
-                  @click="selectedDate(10, 19)"
-                >
-                  19
-                </td>
-                <td
-                  :class="{selected: selectedMonth === 10 && selectedDay === 20}"
-                  class="circle1"
-                  @click="selectedDate(10, 20)"
-                >
-                  20
-                </td>
-                <td
-                  :class="{selected: selectedMonth === 10 && selectedDay === 21}"
-                  class="circle1"
-                  @click="selectedDate(10, 21)"
-                >
-                  21
-                </td>
-                <td
-                  :class="{selected: selectedMonth === 10 && selectedDay === 22}"
-                  class="circle1"
-                  @click="selectedDate(10, 22)"
-                >
-                  22
-                </td>
-                <td
-                  :class="{selected: selectedMonth === 10 && selectedDay === 23}"
-                  class="circle1"
-                  @click="selectedDate(10, 23)"
-                >
-                  23
-                </td>
-                <td
-                  :class="{selected: selectedMonth === 10 && selectedDay === 24}"
-                  class="circle1"
-                  @click="selectedDate(10, 24)"
-                >
-                  24
-                </td>
-                <td
-                  :class="{selected: selectedMonth === 10 && selectedDay === 25}"
-                  class="circle1"
-                  @click="selectedDate(10, 25)"
-                >
-                  25
-                </td>
-              </tr>
-              <tr class="day">
-                <td
-                  :class="{selected: selectedMonth === 10 && selectedDay === 26}"
-                  class="circle1"
-                  @click="selectedDate(10, 26)"
-                >
-                  26
-                </td>
-                <td
-                  :class="{selected: selectedMonth === 10 && selectedDay === 27}"
-                  class="circle1"
-                  @click="selectedDate(10, 27)"
-                >
-                  27
-                </td>
-                <td
-                  :class="{selected: selectedMonth === 10 && selectedDay === 28}"
-                  class="circle1"
-                  @click="selectedDate(10, 28)"
-                >
-                  28
-                </td>
-                <td
-                  :class="{selected: selectedMonth === 10 && selectedDay === 29}"
-                  class="circle1"
-                  @click="selectedDate(10, 29)"
-                >
-                  29
-                </td>
-                <td
-                  :class="{selected: selectedMonth === 10 && selectedDay === 30}"
-                  class="circle1"
-                  @click="selectedDate(10, 30)"
-                >
-                  30
-                </td>
-                <td
-                  :class="{selected: selectedMonth === 10 && selectedDay === 31}"
-                  class="circle1"
-                  @click="selectedDate(10, 31)"
-                >
-                  31
-                </td>
-                <td></td>
-              </tr>
             </table>
           </div>
         </div>
@@ -607,8 +201,10 @@
 
         <br /><br />
       </div>
+      -->
     </div>
 
+    <!-- CSS とJavaScript部分もコメントアウト
     <style>
       .month-tabs {
         display: flex;
@@ -722,7 +318,6 @@
         display: inline-block;
       }
 
-      /* レスポンシブ対応 */
       @media screen and (max-width: 768px) {
         .calendar {
           padding: 0 10px 20px 10px;
@@ -750,12 +345,11 @@
       Vue.createApp({
         data() {
           return {
-            activeTab: "9", // デフォルトで9月を表示
+            activeTab: "9",
             selectedMonth: null,
             selectedDay: null,
             selectedTime: "",
             times: {
-              // 9月の予約可能時間
               "9-1": ["予約可能な時間はなくなりました"],
               "9-2": ["予約可能な時間はなくなりました"],
               "9-3": ["予約可能な時間はなくなりました"],
@@ -787,7 +381,6 @@
               "9-29": ["08:00", "10:00", "12:00", "14:00", "16:00", "18:00"],
               "9-30": ["08:00", "10:00", "12:00", "14:00", "16:00", "18:00"],
 
-              // 10月の予約可能時間
               "10-1": ["08:00", "10:00", "12:00", "14:00", "16:00", "18:00"],
               "10-2": ["08:00", "10:00", "12:00", "14:00", "16:00", "18:00"],
               "10-3": ["08:00", "10:00", "12:00", "14:00", "16:00", "18:00"],
@@ -834,7 +427,6 @@
             this.selectedTime = "";
             this.message = `${month}月${day}日`;
 
-            // タブを選択した月に合わせる
             this.activeTab = month.toString();
           },
 
@@ -844,5 +436,6 @@
         },
       }).mount("#app");
     </script>
+    -->
   </body>
 </html>
